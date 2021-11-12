@@ -5,16 +5,19 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.StateListDrawable;
-import android.os.Build;
 import android.util.AttributeSet;
-import android.widget.TextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 
 import com.flyco.tablayout.R;
+import com.flyco.tablayout.utils.DimensionUtils;
 
-/** 用于需要圆角矩形框背景的TextView的情况,减少直接使用TextView时引入的shape资源文件 */
-public class MsgView extends TextView {
-    private Context context;
-    private GradientDrawable gd_background = new GradientDrawable();
+/**
+ * 用于需要圆角矩形框背景的TextView的情况,减少直接使用TextView时引入的shape资源文件
+ */
+public class MsgView extends AppCompatTextView {
+    private final Context context;
+    private final GradientDrawable mGradientDrawable = new GradientDrawable();
     private int backgroundColor;
     private int cornerRadius;
     private int strokeWidth;
@@ -77,12 +80,12 @@ public class MsgView extends TextView {
     }
 
     public void setCornerRadius(int cornerRadius) {
-        this.cornerRadius = dp2px(cornerRadius);
+        this.cornerRadius = DimensionUtils.dp2px(context, cornerRadius);
         setBgSelector();
     }
 
     public void setStrokeWidth(int strokeWidth) {
-        this.strokeWidth = dp2px(strokeWidth);
+        this.strokeWidth = DimensionUtils.dp2px(context, strokeWidth);
         setBgSelector();
     }
 
@@ -125,16 +128,6 @@ public class MsgView extends TextView {
         return isWidthHeightEqual;
     }
 
-    protected int dp2px(float dp) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
-    }
-
-    protected int sp2px(float sp) {
-        final float scale = this.context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (sp * scale + 0.5f);
-    }
-
     private void setDrawable(GradientDrawable gd, int color, int strokeColor) {
         gd.setColor(color);
         gd.setCornerRadius(cornerRadius);
@@ -144,14 +137,8 @@ public class MsgView extends TextView {
     public void setBgSelector() {
         StateListDrawable bg = new StateListDrawable();
 
-        setDrawable(gd_background, backgroundColor, strokeColor);
-        bg.addState(new int[]{-android.R.attr.state_pressed}, gd_background);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {//16
-            setBackground(bg);
-        } else {
-            //noinspection deprecation
-            setBackgroundDrawable(bg);
-        }
+        setDrawable(mGradientDrawable, backgroundColor, strokeColor);
+        bg.addState(new int[]{-android.R.attr.state_pressed}, mGradientDrawable);
+        setBackground(bg);
     }
 }
