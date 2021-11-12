@@ -54,7 +54,7 @@
                 android:background="#3F9FE0"
                 tl:tl_textAllCaps="true"
                 tl:tl_textBold="BOTH"
-                tl:tl_textsize="14sp"/>
+                tl:tl_textSize="14sp"/>
 
             <com.flyco.tablayout.SlidingTabLayout
                 android:id="@+id/tl_4"
@@ -63,7 +63,7 @@
                 android:background="#009688"
                 tl:tl_tab_padding="0dp"
                 tl:tl_tab_width="95dp"
-                tl:tl_textsize="15sp"/>
+                tl:tl_textSize="15sp"/>
 
             <com.flyco.tablayout.SlidingTabLayout
                 android:id="@+id/tl_5"

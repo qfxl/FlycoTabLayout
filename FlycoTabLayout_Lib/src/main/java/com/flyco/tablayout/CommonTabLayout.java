@@ -177,7 +177,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         mDividerWidth = ta.getDimension(R.styleable.CommonTabLayout_tl_divider_width, DimensionUtils.dp2px(context,0));
         mDividerPadding = ta.getDimension(R.styleable.CommonTabLayout_tl_divider_padding, DimensionUtils.dp2px(context,12));
 
-        mTextSize = ta.getDimension(R.styleable.CommonTabLayout_tl_textsize, DimensionUtils.sp2px(context,13f));
+        mTextSize = ta.getDimension(R.styleable.CommonTabLayout_tl_textSize, DimensionUtils.sp2px(context,13f));
         mTextSelectColor = ta.getColor(R.styleable.CommonTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.CommonTabLayout_tl_textUnselectColor, Color.parseColor("#AAffffff"));
         mTextBold = ta.getInt(R.styleable.CommonTabLayout_tl_textBold, TEXT_BOLD_NONE);
