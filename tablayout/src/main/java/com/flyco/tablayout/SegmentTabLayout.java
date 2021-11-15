@@ -151,7 +151,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
         mDividerPadding = ta.getDimension(R.styleable.SegmentTabLayout_tl_divider_padding, 0);
 
         mTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSize, DimensionUtils.sp2px(context, 13f));
-        mSelectedTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSize_selected, mTextSize);
+        mSelectedTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSelectSize, mTextSize);
         mTextSelectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textUnselectColor, mIndicatorColor);
         mTextBold = ta.getInt(R.styleable.SegmentTabLayout_tl_textBold, TEXT_BOLD_NONE);

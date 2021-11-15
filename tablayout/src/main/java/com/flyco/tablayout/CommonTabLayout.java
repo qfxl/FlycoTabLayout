@@ -179,7 +179,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         mDividerPadding = ta.getDimension(R.styleable.CommonTabLayout_tl_divider_padding, DimensionUtils.dp2px(context,12));
 
         mTextSize = ta.getDimension(R.styleable.CommonTabLayout_tl_textSize, DimensionUtils.sp2px(context,13f));
-        mSelectedTextSize = ta.getDimension(R.styleable.CommonTabLayout_tl_textSize_selected, mTextSize);
+        mSelectedTextSize = ta.getDimension(R.styleable.CommonTabLayout_tl_textSelectSize, mTextSize);
         mTextSelectColor = ta.getColor(R.styleable.CommonTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.CommonTabLayout_tl_textUnselectColor, Color.parseColor("#AAffffff"));
         mTextBold = ta.getInt(R.styleable.CommonTabLayout_tl_textBold, TEXT_BOLD_NONE);
@@ -340,14 +340,14 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
         for (int i = 0; i < mTabCount; ++i) {
             View tabView = mTabsContainer.getChildAt(i);
             final boolean isSelect = i == position;
-            TextView tab_title = (TextView) tabView.findViewById(R.id.tv_tab_title);
-            tab_title.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
-            tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, isSelect ? mSelectedTextSize : mTextSize);
-            ImageView iv_tab_icon = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
+            TextView tabTitleView = (TextView) tabView.findViewById(R.id.tv_tab_title);
+            tabTitleView.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
+            tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, isSelect ? mSelectedTextSize : mTextSize);
+            ImageView tabIconView = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
             CustomTabEntity tabEntity = mTabEntities.get(i);
-            iv_tab_icon.setImageResource(isSelect ? tabEntity.getTabSelectedIcon() : tabEntity.getTabUnselectedIcon());
+            tabIconView.setImageResource(isSelect ? tabEntity.getTabSelectedIcon() : tabEntity.getTabUnselectedIcon());
             if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
-                tab_title.getPaint().setFakeBoldText(isSelect);
+                tabTitleView.getPaint().setFakeBoldText(isSelect);
             }
         }
     }

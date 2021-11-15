@@ -45,13 +45,13 @@
             tl:tl_bar_color="#ffffff"
             tl:tl_textBold="SELECT"
             tl:tl_textSize="14sp"
+            tl:tl_textSelectSize="16sp"
             tl:tl_indicator_anim_enable="true"
             tl:tl_indicator_color="#F6CE59"
             tl:tl_indicator_margin_bottom="2dp"
             tl:tl_indicator_margin_left="2dp"
             tl:tl_indicator_margin_right="2dp"
-            tl:tl_indicator_margin_top="2dp"
-            tl:tl_textSize_selected="16sp" />
+            tl:tl_indicator_margin_top="2dp" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_2"

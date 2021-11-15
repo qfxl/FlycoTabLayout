@@ -55,7 +55,7 @@
                 tl:tl_textAllCaps="true"
                 tl:tl_textBold="BOTH"
                 tl:tl_textSize="14sp"
-                tl:tl_textSize_selected="16sp"/>
+                tl:tl_textSelectSize="16sp"/>
 
             <com.flyco.tablayout.SlidingTabLayout
                 android:id="@+id/tl_4"
