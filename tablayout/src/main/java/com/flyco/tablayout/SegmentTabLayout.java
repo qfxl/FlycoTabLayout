@@ -75,6 +75,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
     private static final int TEXT_BOLD_WHEN_SELECT = 1;
     private static final int TEXT_BOLD_BOTH = 2;
     private float mTextSize;
+    private float mSelectedTextSize;
     private int mTextSelectColor;
     private int mTextUnselectColor;
     private int mTextBold;
@@ -150,6 +151,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
         mDividerPadding = ta.getDimension(R.styleable.SegmentTabLayout_tl_divider_padding, 0);
 
         mTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSize, DimensionUtils.sp2px(context, 13f));
+        mSelectedTextSize = ta.getDimension(R.styleable.SegmentTabLayout_tl_textSize_selected, mTextSize);
         mTextSelectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.SegmentTabLayout_tl_textUnselectColor, mIndicatorColor);
         mTextBold = ta.getInt(R.styleable.SegmentTabLayout_tl_textBold, TEXT_BOLD_NONE);
@@ -248,7 +250,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
             tabView.setPadding((int) mTabPadding, 0, (int) mTabPadding, 0);
             TextView tabTitleView = (TextView) tabView.findViewById(R.id.tv_tab_title);
             tabTitleView.setTextColor(i == mCurrentTab ? mTextSelectColor : mTextUnselectColor);
-            tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+            tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, i == mCurrentTab ? mSelectedTextSize : mTextSize);
 //            tabTitleView.setPadding((int) mTabPadding, 0, (int) mTabPadding, 0);
             if (mTextAllCaps) {
                 tabTitleView.setText(tabTitleView.getText().toString().toUpperCase());
@@ -273,6 +275,7 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
             final boolean isSelect = i == position;
             TextView tabTitleView = (TextView) tabView.findViewById(R.id.tv_tab_title);
             tabTitleView.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
+            tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, isSelect ? mSelectedTextSize : mTextSize);
             if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
                 tabTitleView.getPaint().setFakeBoldText(isSelect);
             }
@@ -505,6 +508,11 @@ public class SegmentTabLayout extends FrameLayout implements ValueAnimator.Anima
 
     public void setTextSize(float textSize) {
         this.mTextSize = DimensionUtils.sp2px(getContext(),textSize);
+        updateTabStyles();
+    }
+
+    public void setTextSelectedSize(float textSize) {
+        this.mSelectedTextSize = DimensionUtils.sp2px(getContext(),textSize);
         updateTabStyles();
     }
 

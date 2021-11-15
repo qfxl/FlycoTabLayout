@@ -96,6 +96,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
     private static final int TEXT_BOLD_WHEN_SELECT = 1;
     private static final int TEXT_BOLD_BOTH = 2;
     private float mTextSize;
+    private float mSelectedTextSize;
     private int mTextSelectColor;
     private int mTextUnselectColor;
     private int mTextBold;
@@ -164,6 +165,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         mDividerPadding = ta.getDimension(R.styleable.SlidingTabLayout_tl_divider_padding, DimensionUtils.dp2px(context,12));
 
         mTextSize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textSize, DimensionUtils.sp2px(context, 14));
+        mSelectedTextSize = ta.getDimension(R.styleable.SlidingTabLayout_tl_textSize_selected, mTextSize);
         mTextSelectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textSelectColor, Color.parseColor("#ffffff"));
         mTextUnselectColor = ta.getColor(R.styleable.SlidingTabLayout_tl_textUnselectColor, Color.parseColor("#AAffffff"));
         mTextBold = ta.getInt(R.styleable.SlidingTabLayout_tl_textBold, TEXT_BOLD_NONE);
@@ -303,7 +305,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             TextView tabTitleView = (TextView) v.findViewById(R.id.tv_tab_title);
             if (tabTitleView != null) {
                 tabTitleView.setTextColor(i == mCurrentTab ? mTextSelectColor : mTextUnselectColor);
-                tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextSize);
+                tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, i == mCurrentTab ? mSelectedTextSize : mTextSize);
                 tabTitleView.setPadding((int) mTabPadding, 0, (int) mTabPadding, 0);
                 if (mTextAllCaps) {
                     tabTitleView.setText(tabTitleView.getText().toString().toUpperCase());
@@ -376,6 +378,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 
             if (tabTitleView != null) {
                 tabTitleView.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
+                tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, isSelect ? mSelectedTextSize : mTextSize);
                 if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
                     tabTitleView.getPaint().setFakeBoldText(isSelect);
                     tabTitleView.invalidate();
@@ -394,7 +397,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
         //for mIndicatorWidthEqualTitle
         if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
             TextView tabTitleView = (TextView) currentTabView.findViewById(R.id.tv_tab_title);
-            mTextPaint.setTextSize(mTextSize);
+            mTextPaint.setTextSize(mSelectedTextSize);
             float textWidth = mTextPaint.measureText(tabTitleView.getText().toString());
             margin = (right - left - textWidth) / 2;
         }
@@ -410,7 +413,7 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
             // for mIndicatorWidthEqualTitle
             if (mIndicatorStyle == STYLE_NORMAL && mIndicatorWidthEqualTitle) {
                 TextView nexTabTitleView = (TextView) nextTabView.findViewById(R.id.tv_tab_title);
-                mTextPaint.setTextSize(mTextSize);
+                mTextPaint.setTextSize(mSelectedTextSize);
                 float nextTextWidth = mTextPaint.measureText(nexTabTitleView.getText().toString());
                 float nextMargin = (nextTabRight - nextTabLeft - nextTextWidth) / 2;
                 margin = margin + mCurrentPositionOffset * (nextMargin - margin);
@@ -634,6 +637,11 @@ public class SlidingTabLayout extends HorizontalScrollView implements ViewPager.
 
     public void setTextsize(float textsize) {
         this.mTextSize = DimensionUtils.sp2px(getContext(), textsize);
+        updateTabStyles();
+    }
+
+    public void setTextSelectedSize(float textSize) {
+        this.mSelectedTextSize = DimensionUtils.sp2px(getContext(),textSize);
         updateTabStyles();
     }
 
