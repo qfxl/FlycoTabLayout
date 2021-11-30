@@ -10,7 +10,7 @@ import com.github.tablayout.listener.ITab;
  * version: 1.0
  */
 
-class Tab implements ITab {
+public class Tab implements ITab {
     private final String title;
     private final int icon;
     private final int iconSelected;
