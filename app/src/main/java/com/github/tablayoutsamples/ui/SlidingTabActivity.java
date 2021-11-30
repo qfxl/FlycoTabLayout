@@ -1,4 +1,4 @@
-package com.flyco.tablayoutsamples.ui;
+package com.github.tablayoutsamples.ui;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,11 +12,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.flyco.tablayout.SlidingTabLayout;
-import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.flyco.tablayout.widget.MsgView;
-import com.flyco.tablayoutsamples.R;
-import com.flyco.tablayoutsamples.utils.ViewFindUtils;
+
+import com.github.tablayout.SlidingTabLayout;
+import com.github.tablayout.listener.OnTabSelectListener;
+import com.github.tablayout.widget.MsgView;
+import com.github.tablayoutsamples.R;
+import com.github.tablayoutsamples.utils.ViewFindUtils;
 
 import java.util.ArrayList;
 

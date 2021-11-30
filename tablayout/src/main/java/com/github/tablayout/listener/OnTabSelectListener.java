@@ -1,4 +1,4 @@
-package com.flyco.tablayout.listener;
+package com.github.tablayout.listener;
 
 public interface OnTabSelectListener {
     /**

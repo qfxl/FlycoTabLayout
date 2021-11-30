@@ -1,6 +1,6 @@
-package com.flyco.tablayoutsamples.entity;
+package com.github.tablayoutsamples.entity;
 
-import com.flyco.tablayout.listener.CustomTabEntity;
+import com.github.tablayout.listener.CustomTabEntity;
 
 public class TabEntity implements CustomTabEntity {
     public String title;

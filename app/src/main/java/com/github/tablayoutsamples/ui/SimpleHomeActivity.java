@@ -1,4 +1,4 @@
-package com.flyco.tablayoutsamples.ui;
+package com.github.tablayoutsamples.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.flyco.tablayoutsamples.adapter.SimpleHomeAdapter;
+import com.github.tablayoutsamples.adapter.SimpleHomeAdapter;
 
 public class SimpleHomeActivity extends AppCompatActivity {
     private Context mContext = this;
@@ -26,12 +26,9 @@ public class SimpleHomeActivity extends AppCompatActivity {
         lv.setFadingEdgeLength(0);
         lv.setAdapter(new SimpleHomeAdapter(mContext, mItems));
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(mContext, mClasses[position]);
-                startActivity(intent);
-            }
+        lv.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(mContext, mClasses[position]);
+            startActivity(intent);
         });
 
         setContentView(lv);

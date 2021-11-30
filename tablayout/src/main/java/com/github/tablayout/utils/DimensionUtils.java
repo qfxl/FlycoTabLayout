@@ -1,4 +1,4 @@
-package com.flyco.tablayout.utils;
+package com.github.tablayout.utils;
 
 import android.content.Context;
 

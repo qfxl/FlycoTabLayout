@@ -1,4 +1,4 @@
-package com.flyco.tablayout.widget;
+package com.github.tablayout.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,8 +9,9 @@ import android.util.AttributeSet;
 
 import androidx.appcompat.widget.AppCompatTextView;
 
-import com.flyco.tablayout.R;
-import com.flyco.tablayout.utils.DimensionUtils;
+import com.github.tablayout.R;
+import com.github.tablayout.utils.DimensionUtils;
+
 
 /**
  * 用于需要圆角矩形框背景的TextView的情况,减少直接使用TextView时引入的shape资源文件

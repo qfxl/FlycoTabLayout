@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="84dp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_2"
             android:layout_width="match_parent"
             android:layout_height="54dp"
@@ -51,7 +51,7 @@
             android:layout_height="84dp">
         </FrameLayout>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_3"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -70,7 +70,7 @@
             tl:tl_underline_gravity="TOP"
             tl:tl_underline_height="1dp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_4"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -80,7 +80,7 @@
             tl:tl_indicator_width="10dp"
             tl:tl_textSize="14sp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             tl:tl_textBold="BOTH"
             android:id="@+id/tl_5"
             android:layout_width="match_parent"
@@ -92,7 +92,7 @@
             tl:tl_indicator_width="4dp"
             tl:tl_textSize="14sp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_6"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -103,7 +103,7 @@
             tl:tl_indicator_width="10dp"
             tl:tl_textSize="14sp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_7"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -116,7 +116,7 @@
             tl:tl_indicator_width="10dp"
             tl:tl_textSize="14sp"/>
 
-        <com.flyco.tablayout.CommonTabLayout
+        <com.github.tablayout.CommonTabLayout
             android:id="@+id/tl_8"
             android:layout_width="match_parent"
             android:layout_height="48dp"

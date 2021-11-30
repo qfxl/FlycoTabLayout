@@ -1,4 +1,4 @@
-package com.flyco.tablayout;
+package com.github.tablayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -27,10 +27,10 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.flyco.tablayout.utils.DimensionUtils;
-import com.flyco.tablayout.utils.UnreadMsgUtils;
-import com.flyco.tablayout.widget.MsgView;
+import com.github.tablayout.listener.OnTabSelectListener;
+import com.github.tablayout.utils.DimensionUtils;
+import com.github.tablayout.utils.UnreadMsgUtils;
+import com.github.tablayout.widget.MsgView;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
                 tl:tl_underline_gravity="TOP"
                 tl:tl_underline_height="1dp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_2"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -47,7 +47,7 @@
                 tl:tl_underline_color="#1A000000"
                 tl:tl_underline_height="1dp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_3"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -57,7 +57,7 @@
                 tl:tl_textSize="14sp"
                 tl:tl_textSelectSize="16sp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_4"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -66,14 +66,14 @@
                 tl:tl_tab_width="95dp"
                 tl:tl_textSize="15sp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_5"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:background="#F6CE59"
                 tl:tl_indicator_width="10dp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_6"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -82,7 +82,7 @@
                 tl:tl_indicator_height="4dp"
                 tl:tl_indicator_width="4dp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_7"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -91,7 +91,7 @@
                 tl:tl_indicator_height="3dp"
                 tl:tl_indicator_width="10dp"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_8"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -99,7 +99,7 @@
                 tl:tl_indicator_color="#eeeeee"
                 tl:tl_indicator_style="TRIANGLE"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_9"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
@@ -110,7 +110,7 @@
                 tl:tl_indicator_margin_right="2dp"
                 tl:tl_indicator_style="BLOCK"/>
 
-            <com.flyco.tablayout.SlidingTabLayout
+            <com.github.tablayout.SlidingTabLayout
                 android:id="@+id/tl_10"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"

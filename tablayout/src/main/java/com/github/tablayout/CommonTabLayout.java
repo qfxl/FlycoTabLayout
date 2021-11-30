@@ -1,4 +1,4 @@
-package com.flyco.tablayout;
+package com.github.tablayout;
 
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
@@ -28,12 +28,13 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.flyco.tablayout.listener.CustomTabEntity;
-import com.flyco.tablayout.listener.OnTabSelectListener;
-import com.flyco.tablayout.utils.DimensionUtils;
-import com.flyco.tablayout.utils.FragmentChangeManager;
-import com.flyco.tablayout.utils.UnreadMsgUtils;
-import com.flyco.tablayout.widget.MsgView;
+
+import com.github.tablayout.listener.CustomTabEntity;
+import com.github.tablayout.listener.OnTabSelectListener;
+import com.github.tablayout.utils.DimensionUtils;
+import com.github.tablayout.utils.FragmentChangeManager;
+import com.github.tablayout.utils.UnreadMsgUtils;
+import com.github.tablayout.widget.MsgView;
 
 import java.util.ArrayList;
 

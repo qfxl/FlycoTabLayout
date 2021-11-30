@@ -1,4 +1,4 @@
-package com.flyco.tablayoutsamples.ui;
+package com.github.tablayoutsamples.ui;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.flyco.tablayoutsamples.R;
+import com.github.tablayoutsamples.R;
 
 @SuppressLint("ValidFragment")
 public class SimpleCardFragment extends Fragment {
