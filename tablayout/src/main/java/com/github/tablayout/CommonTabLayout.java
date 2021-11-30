@@ -29,7 +29,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 
-import com.github.tablayout.listener.CustomTabEntity;
+import com.github.tablayout.listener.ITab;
 import com.github.tablayout.listener.OnTabSelectListener;
 import com.github.tablayout.utils.DimensionUtils;
 import com.github.tablayout.utils.FragmentChangeManager;
@@ -43,7 +43,7 @@ import java.util.ArrayList;
  */
 public class CommonTabLayout extends FrameLayout implements ValueAnimator.AnimatorUpdateListener {
     private final Context mContext;
-    private final ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+    private final ArrayList<ITab> mTabEntities = new ArrayList<>();
     private final LinearLayout mTabsContainer;
     private int mCurrentTab;
     private int mLastTab;
@@ -204,7 +204,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
      *
      * @param tabEntities
      */
-    public void setTabData(ArrayList<CustomTabEntity> tabEntities) {
+    public void setTabData(ArrayList<ITab> tabEntities) {
         if (tabEntities == null || tabEntities.size() == 0) {
             throw new IllegalStateException("TabEntities can not be NULL or EMPTY !");
         }
@@ -223,7 +223,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
      * @param containerViewId
      * @param fragments
      */
-    public void setTabData(ArrayList<CustomTabEntity> tabEntities, FragmentActivity fa, int containerViewId, ArrayList<Fragment> fragments) {
+    public void setTabData(ArrayList<ITab> tabEntities, FragmentActivity fa, int containerViewId, ArrayList<Fragment> fragments) {
         mFragmentChangeManager = new FragmentChangeManager(fa.getSupportFragmentManager(), containerViewId, fragments);
         setTabData(tabEntities);
     }
@@ -315,7 +315,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
             ImageView tabIconView = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
             if (mIconVisible) {
                 tabIconView.setVisibility(View.VISIBLE);
-                CustomTabEntity tabEntity = mTabEntities.get(i);
+                ITab tabEntity = mTabEntities.get(i);
                 tabIconView.setImageResource(i == mCurrentTab ? tabEntity.getTabSelectedIcon() : tabEntity.getTabUnselectedIcon());
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                         mIconWidth <= 0 ? LinearLayout.LayoutParams.WRAP_CONTENT : (int) mIconWidth,
@@ -345,7 +345,7 @@ public class CommonTabLayout extends FrameLayout implements ValueAnimator.Animat
             tabTitleView.setTextColor(isSelect ? mTextSelectColor : mTextUnselectColor);
             tabTitleView.setTextSize(TypedValue.COMPLEX_UNIT_PX, isSelect ? mSelectedTextSize : mTextSize);
             ImageView tabIconView = (ImageView) tabView.findViewById(R.id.iv_tab_icon);
-            CustomTabEntity tabEntity = mTabEntities.get(i);
+            ITab tabEntity = mTabEntities.get(i);
             tabIconView.setImageResource(isSelect ? tabEntity.getTabSelectedIcon() : tabEntity.getTabUnselectedIcon());
             if (mTextBold == TEXT_BOLD_WHEN_SELECT) {
                 tabTitleView.getPaint().setFakeBoldText(isSelect);

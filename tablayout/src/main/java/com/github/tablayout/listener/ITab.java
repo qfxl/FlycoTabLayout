@@ -2,7 +2,7 @@ package com.github.tablayout.listener;
 
 import androidx.annotation.DrawableRes;
 
-public interface CustomTabEntity {
+public interface ITab {
     /**
      * 获取tabTitle
      * @return

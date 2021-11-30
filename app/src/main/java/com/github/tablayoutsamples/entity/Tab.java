@@ -1,13 +1,13 @@
 package com.github.tablayoutsamples.entity;
 
-import com.github.tablayout.listener.CustomTabEntity;
+import com.github.tablayout.listener.ITab;
 
-public class TabEntity implements CustomTabEntity {
+public class Tab implements ITab {
     public String title;
     public int selectedIcon;
     public int unSelectedIcon;
 
-    public TabEntity(String title, int selectedIcon, int unSelectedIcon) {
+    public Tab(String title, int selectedIcon, int unSelectedIcon) {
         this.title = title;
         this.selectedIcon = selectedIcon;
         this.unSelectedIcon = unSelectedIcon;

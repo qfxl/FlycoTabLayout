@@ -13,12 +13,12 @@ import androidx.viewpager.widget.ViewPager;
 
 
 import com.github.tablayout.CommonTabLayout;
-import com.github.tablayout.listener.CustomTabEntity;
+import com.github.tablayout.listener.ITab;
 import com.github.tablayout.listener.OnTabSelectListener;
 import com.github.tablayout.utils.UnreadMsgUtils;
 import com.github.tablayout.widget.MsgView;
 import com.github.tablayoutsamples.R;
-import com.github.tablayoutsamples.entity.TabEntity;
+import com.github.tablayoutsamples.entity.Tab;
 import com.github.tablayoutsamples.utils.ViewFindUtils;
 
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class CommonTabActivity extends AppCompatActivity {
     private int[] mIconSelectIds = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
             R.mipmap.tab_contact_select, R.mipmap.tab_more_select};
-    private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
+    private ArrayList<ITab> mTabEntities = new ArrayList<>();
     private View mDecorView;
     private ViewPager mViewPager;
     private CommonTabLayout mTabLayout_1;
@@ -60,7 +60,7 @@ public class CommonTabActivity extends AppCompatActivity {
 
 
         for (int i = 0; i < mTitles.length; i++) {
-            mTabEntities.add(new TabEntity(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
+            mTabEntities.add(new Tab(mTitles[i], mIconSelectIds[i], mIconUnselectIds[i]));
         }
 
         mDecorView = getWindow().getDecorView();
